@@ -36,7 +36,7 @@ func CopyFile(src, dst string) error {
 		return errors.New("source is a directory: " + src)
 	}
 	args := []string{src, dst}
-	return runCommand("rsync", args...)
+	return runCommand("rsync --min-size=20kb", args...)
 }
 
 // CopyDir ...
